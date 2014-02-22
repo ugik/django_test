@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h4>Language is: {{ language }}, Session language is: {{ session_language }}</h4>
+Language is: {{ language }}, Session language is: {{ session_language }}
 {% if articles.count > 0 %}
 {% for article in articles %}
 <div>

@@ -15,4 +15,6 @@ python manage.py syncdb
 
 # restart Apache
 sudo service apache2 restart
+# sudo /etc/init.d/apache2 reload
+
 
