@@ -28,8 +28,8 @@ ALLOWED_HOSTS = []
 
 # Template directories
 TEMPLATE_DIRS = (
-	'/home/gk/django_test/templates',
-	'/home/gk/django_test/articles/templates',
+	BASE_DIR+'/django_test/templates',
+	BASE_DIR+'/django_test/articles/templates',
 )
 
 # Application definition
@@ -90,9 +90,6 @@ USE_TZ = True
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-	('assets', '/home/gk/django_test/static'),
-)
 
 # references:
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

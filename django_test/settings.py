@@ -28,8 +28,8 @@ ALLOWED_HOSTS = []
 
 # Template directories
 TEMPLATE_DIRS = (
-	'/home/gk/django_test/templates',
-	'/home/gk/django_test/articles/templates',
+	BASE_DIR+'/templates',
+	BASE_DIR+'/articles/templates',
 )
 
 # Application definition
