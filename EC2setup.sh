@@ -19,30 +19,21 @@ git clone https://github.com/ugik/$project.git
 sudo rm /etc/apache2/httpd.conf
 sudo touch /etc/apache2/httpd.conf
 sudo chmod 777 /etc/apache2/*.conf
+sudo echo "Alias /static /home/ubuntu/django_test/static" >> /etc/apache2/httpd.conf
 sudo echo "WSGIScriptAlias / /home/ubuntu/"$project_app"/wsgi.py" >> /etc/apache2/httpd.conf
 sudo echo "WSGIPythonPath /home/ubuntu/"$project >> /etc/apache2/httpd.conf
 sudo echo "<Directory /home/ubuntu/"$project_app">" >> /etc/apache2/httpd.conf
 sudo echo "<Files wsgi.py>" >> /etc/apache2/httpd.conf
-sudo echo "<IfVersion < 2.3 >" >> /etc/apache2/httpd.conf
 sudo echo "    Order deny,allow" >> /etc/apache2/httpd.conf
 sudo echo "    Allow from all" >> /etc/apache2/httpd.conf
-sudo echo "</IfVersion>" >> /etc/apache2/httpd.conf
-sudo echo "<IfVersion > 2.3 >" >> /etc/apache2/httpd.conf
-sudo echo "    Require all granted" >> /etc/apache2/httpd.conf
-sudo echo "</IfVersion>" >> /etc/apache2/httpd.conf
 sudo echo "</Files>" >> /etc/apache2/httpd.conf
 sudo echo "</Directory>" >> /etc/apache2/httpd.conf
 sudo echo " " >> /etc/apache2/httpd.conf
 
 sudo echo "<Directory /home/ubuntu/"$project"/static>" >> /etc/apache2/httpd.conf
 sudo echo "<Files wsgi.py>" >> /etc/apache2/httpd.conf
-sudo echo "<IfVersion < 2.3 >" >> /etc/apache2/httpd.conf
 sudo echo "    Order deny,allow" >> /etc/apache2/httpd.conf
 sudo echo "    Allow from all" >> /etc/apache2/httpd.conf
-sudo echo "</IfVersion>" >> /etc/apache2/httpd.conf
-sudo echo "<IfVersion > 2.3 >" >> /etc/apache2/httpd.conf
-sudo echo "    Require all granted" >> /etc/apache2/httpd.conf
-sudo echo "</IfVersion>" >> /etc/apache2/httpd.conf
 sudo echo "</Files>" >> /etc/apache2/httpd.conf
 sudo echo "</Directory>" >> /etc/apache2/httpd.conf
 
