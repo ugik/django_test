@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-<h1>Articles:</h1>
+{% block content %}
+<h4>Language is: {{ language }}, Session language is: {{ session_language }}</h4>
 {% if articles.count > 0 %}
 {% for article in articles %}
 <div>
@@ -12,4 +13,6 @@
 {% else %}
 <p>None to show</p>
 {% endif %}
+
+{% endblock %}
 
