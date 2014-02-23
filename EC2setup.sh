@@ -56,7 +56,20 @@ mysql -u root -pmysql data < data.sql
 
 sudo service apache2 restart
 
+# setup remote git repo and hooks
+mkdir $project.com.git
+cd $project.com.git
+git init --bare
+cd hooks
+sudo echo "#!/bin/sh" >> post-receive
+sudo echo "GIT_WORK_TREE=/home/username/public_html/example.com/" >> post-receive
+sudo echo "export GIT_WORK_TREE" >> post-receive
+sudo echo "git checkout -f" >> post-receive
+chmod +x post-receive
+cd ~
+
 # references:
 # remote LAMP setup: http://nickpolet.com/blog/1/
 # locale LAMP setup: http://www.lleess.com/2013/05/install-django-on-apache-server-with.html#.UwavkDddV38
+# http://cuppster.com/2011/01/30/using-git-to-remotely-install-website-updates/
 
