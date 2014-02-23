@@ -15,6 +15,7 @@
 <div>
 <h2><a href="/articles/get/{{ article.id }}/">{{ article.title }}</a></h2>
 <p>{{ article.body|lower|truncatewords:"10" }}</p>
+<small><p>{{ article.likes }} people liked this article.</small>
 </div>
 {% endfor %}
 

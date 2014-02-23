@@ -1,15 +1,15 @@
 from django.shortcuts import render_to_response
 from article.models import Article
 from django.http import HttpResponse
-from forms import ArticleForm
 from django.http import HttpResponseRedirect
+from forms import ArticleForm
 from django.core.context_processors import csrf
 
-from django.shortcuts import render
 from django.template.loader import get_template
 from django.template import Context
-from django.views.generic.base import TemplateView
 from django.template import RequestContext
+from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 def articles(request):
 	if not request.user.is_authenticated():
@@ -62,6 +62,13 @@ def create(request):
 
 	return render_to_response('create_article.html', args)
 
+def like_article(request, article_id):
+	if article_id:
+		a = Article.objects.get(id=article_id)
+		a.likes += 1
+		a.save()
+	
+	return HttpResponseRedirect('/articles/get/%s' % article_id)
 
 
 #_____________________________________________________________________

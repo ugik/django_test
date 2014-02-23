@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+    <link rel="stylesheet" href="/static/css/datepicker.css" type="text/css" media="screen"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"><script>
+
+    <script>
+	$(function() {
+		$( "#id_pub_date" ).datepicker();
+	});
+	</script>
+{% endblock %}
+
 {% block sidebar %}
 <ul>
 	<li><a href="/articles/all">Cancel</a></li>

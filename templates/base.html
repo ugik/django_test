@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>{% block title %}Tutorial Django app (http://www.mikehibbert.me.uk){% endblock %}</title>
-
 	<link rel="stylesheet" type="text/css" href="{% static "css/default.css" %}">
+    {% block extrahead %}{% endblock %}
+
+	<title>{% block title %}Tutorial Django app (http://www.mikehibbert.me.uk){% endblock %}</title>
 
 </head>
 

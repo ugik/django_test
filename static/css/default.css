@@ -1,10 +1,10 @@
 body {
     background-attachment: fixed;
     background-color: #FFFFFF;
-    background-image: url(/static/images/css-background-clear.jpg);
+    background-image: url(/static/images/paper.jpg);
     background-position: center top;
-    background-repeat: no-repeat;
-    color: #A90123;
+    background-repeat: repeat;
+    color: #000;
     margin: 20;
     padding: 20;
 	test-align: center;
@@ -20,7 +20,7 @@ body {
 	#sidebar {
 		float: left;
 		width: 200px;
-		border: 0px solid #000;
+		border: 1px solid #a00;
 	}
 
 	#content {
