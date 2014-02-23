@@ -4,6 +4,7 @@
 <ul>
 <li><a href="/articles/all">Articles</a></li>
 <li><a href="/articles/create">Create Article</a></li>
+<li><a href="/">Home</a></li>
 </ul>
 {% endblock %}
 

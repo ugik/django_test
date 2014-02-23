@@ -1,4 +1,12 @@
 body {
+    background-attachment: fixed;
+    background-color: #FFFFFF;
+    background-image: url(/static/images/css-background-clear.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: #A90123;
+    margin: 20;
+    padding: 20;
 	test-align: center;
 	}
 
@@ -12,7 +20,7 @@ body {
 	#sidebar {
 		float: left;
 		width: 200px;
-		border: 1px solid #000;
+		border: 0px solid #000;
 	}
 
 	#content {
@@ -21,4 +29,6 @@ body {
 		border: 1pm solid #f00;
 		padding: 10px;
 	}
+
+
 
