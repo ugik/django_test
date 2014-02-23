@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
+{% block sidebar %}
+<ul>
+<li><a href="/articles/all">Articles</a></li>
+<li><a href="/articles/create">Create Article</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
-Language is: {{ language }}, Session language is: {{ session_language }}
+language is: {{ language }}, session language is: {{ session_language }}
 {% if articles.count > 0 %}
 {% for article in articles %}
 <div>
