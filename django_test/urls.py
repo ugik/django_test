@@ -6,6 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
+    (r'^$', 'django_test.views.index'),
+
 	(r'^articles/', include('article.urls')),
 # admin
     url(r'^admin/', include(admin.site.urls)),

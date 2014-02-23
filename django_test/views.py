@@ -4,11 +4,16 @@ from django.contrib import auth
 from django.core.context_processors import csrf
 from forms import MyRegistrationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.template import RequestContext
+
+def index(request):
+	context = {}
+	return render_to_response('index.html', context, context_instance=RequestContext(request))	
 
 def login(request):
 	c = {}
 	c.update(csrf(request))
-	return render_to_response('login.html', c)
+	return render_to_response('login.html', c, context_instance=RequestContext(request))
 
 def auth_view(request):
 	username = request.POST.get('username', '')
@@ -23,7 +28,8 @@ def auth_view(request):
 
 def loggedin(request):
 	return render_to_response('loggedin.html',
-						 	 {'full_name' : request.user.username})
+						 	 {'full_name' : request.user.username},
+							  context_instance=RequestContext(request))
 
 def invalid_login(request):
 	return render_to_response('invalid_login.html')
