@@ -11,14 +11,21 @@
 {% block content %}
 <small>language is: {{ language }}, session language is: {{ session_language }}</small>
 {% if articles.count > 0 %}
+<table>
+
 {% for article in articles %}
 <div>
-<h2><a href="/articles/get/{{ article.id }}/">{{ article.title }}</a></h2>
-<p>{{ article.body|lower|truncatewords:"10" }}</p>
-<p>{{ article.likes }} people liked this article.
+<tr>
+    <td><h2><a href="/articles/get/{{ article.id }}/">{{ article.title }}</a></h2></td>
+	<td><p>{{ article.body|lower|truncatewords:"10" }}</td>
+{% if article.thumbnail %}
+	<td><p><img src="/static/{{article.thumbnail}}" width=100"/></p></td>
+{% endif %}
+	<td><small><p>{{ article.likes }} people liked this article.</small></td>
+</tr>
 </div>
 {% endfor %}
-
+</table>
 {% else %}
 <p>None to show</p>
 {% endif %}

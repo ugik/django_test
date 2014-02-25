@@ -67,7 +67,8 @@ def like_article(request, article_id):
 		a = Article.objects.get(id=article_id)
 		a.likes += 1
 		a.save()
-
+	
+	return HttpResponseRedirect('/articles/get/%s' % article_id)
 
 
 #_____________________________________________________________________

@@ -47,7 +47,7 @@ def language(request, language='en-us'):
 
 def create(request):
 	if request.POST:
-		form = ArticleForm(request.POST)
+		form = ArticleForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
 

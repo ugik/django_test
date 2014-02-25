@@ -85,6 +85,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Media files
+
+MEDIA_ROOT = BASE_DIR+'/static'
+
 
 # Static files (CSS, JavaScript, Images)
 
