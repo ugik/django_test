@@ -15,6 +15,7 @@ sudo apt-get -y install python-pip
 sudo pip install django
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
+sudo pip install django-tastypie
 sudo apt-get -y install mysql-server python-mysqldb
 sudo apt-get -y install git-core
 
