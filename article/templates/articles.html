@@ -6,6 +6,16 @@
 <li><a href="/articles/create">Create Article</a></li>
 <li><a href="/">Home</a></li>
 </ul>
+
+<h4>Search</h3>
+{% csrf_token %}
+<input type='test' id='search' name='search' />
+
+<ul id='search-results'>
+
+</ul>
+
+
 {% endblock %}
 
 {% block content %}

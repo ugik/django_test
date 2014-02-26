@@ -6,6 +6,12 @@
 <li><a href="/articles/create">Create Article</a></li>
 <li><a href="/">Home</a></li>
 </ul>
+
+<h4>Search</h3>
+{% csrf_token %}
+
+
+
 {% endblock %}
 
 {% block content %}
@@ -18,9 +24,11 @@
 <tr>
     <td><h2><a href="/articles/get/{{ article.id }}/">{{ article.title }}</a></h2></td>
 	<td><p>{{ article.body|lower|truncatewords:"10" }}</td>
+	<td>
 {% if article.thumbnail %}
-	<td><p><img src="/static/{{article.thumbnail}}" width=100"/></p></td>
+	<p><img src="/static/{{article.thumbnail}}" width=100"/></p>
 {% endif %}
+	</td>
 	<td><small><p>{{ article.likes }} people liked this article.</small></td>
 </tr>
 </div>
