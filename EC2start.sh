@@ -14,3 +14,5 @@ ssh -i ~/Downloads/ec2.pem ubuntu@"$1" bash EC2setup.sh
 # eg.
 # bash EC2start ec2-54-213-239-72.us-west-2.compute.amazonaws.com
 # ssh -i ~/Downloads/ec2.pem ubuntu@ec2-54-213-239-72.us-west-2.compute.amazonaws.com
+# scp -i ~/Downloads/ec2.pem foo.file ubuntu@ec2-54-213-239-72.us-west-2.compute.amazonaws.com
+
