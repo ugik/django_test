@@ -12,6 +12,9 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 
+import logging
+logr = logging.getLogger(__name__)
+
 def articles(request):
 	if not request.user.is_authenticated():
 		return HttpResponseRedirect('/accounts/login')
@@ -103,6 +106,7 @@ def search_titles(request):
 	else:
 		search_text = ''
 	
+	logr.debug(search_text)
 	articles = Article.objects.filter(title__contains=search_text)
 
 	return render_to_response('ajax_search.html', {'articles' : articles})
