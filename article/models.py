@@ -20,6 +20,7 @@ class Comment(models.Model):
 	body = models.TextField()
 	pub_date = models.DateTimeField('date published')
 	article = models.ForeignKey(Article)
+	likes = models.IntegerField(default=0)
 
 	def __unicode__(self):
 		return self.name

@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "setup EC2 instance..."
 
+# simple setup: no database, no data
+
 repo='ugik'
 project='django_test'
 project_app=$project"/django_test"
@@ -13,11 +15,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y install apache2 libapache2-mod-wsgi
 sudo apt-get -y install python-pip
 sudo pip install django
-sudo pip install south
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
 sudo pip install django-tastypie
-sudo apt-get -y install mysql-server python-mysqldb
 sudo apt-get -y install git-core
 
 # get project files from repo
@@ -50,11 +48,6 @@ sudo echo "Include httpd.conf" >> /etc/apache2/apache2.conf
 
 # copy django admin statics files
 cp -r /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/ /home/ubuntu/$project/static
-
-# assumes data.sql for data upload
-cd ~
-mysql -u root -pmysql -e "create database data; GRANT ALL PRIVILEGES ON data.* TO django@localhost IDENTIFIED BY 'django'"
-mysql -u root -pmysql data < data.sql
 
 sudo service apache2 restart
 

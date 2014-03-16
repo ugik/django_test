@@ -21,3 +21,6 @@ class Comment(models.Model):
 	pub_date = models.DateTimeField('date published')
 	article = models.ForeignKey(Article)
 
+	def __unicode__(self):
+		return self.name
+

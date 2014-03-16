@@ -10,6 +10,7 @@ from django.template import Context
 from django.template import RequestContext
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django.views.decorators.csrf import csrf_exempt
 
 def articles(request):
 	if not request.user.is_authenticated():
@@ -73,6 +74,7 @@ def like_article(request, article_id):
 	
 	return HttpResponseRedirect('/articles/get/%s' % article_id)
 
+
 def add_comment(request, article_id):
 	a = Article.objects.get(id=article_id)
 
@@ -106,12 +108,25 @@ def search_titles(request):
 	return render_to_response('ajax_search.html', {'articles' : articles})
 
 
+import json
+import os
+# os.environ['HOME']
+@csrf_exempt
+def push(request):
+	data = 'None'
+	json_data = json.loads(request.body)
+	try:
+		json_data['home'] = os.environ['HOME']
+	except KeyError:
+		HttpResponseServerError("Malformed data")
+	return HttpResponse(json.dumps(json_data))
 
 #_____________________________________________________________________
 # Hello examples:
 # basic
 def hello(request):
 	html = "<html><body>Hi %s, this works.</body></html>" % 'GK'
+	print request.GET
 	return HttpResponse(html)
 
 # using template

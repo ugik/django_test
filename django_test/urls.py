@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
 from article.views import HelloTemplate
-
 from django.contrib import admin
+from tastypie.api import Api
+
 admin.autodiscover()
 
 urlpatterns = patterns('',

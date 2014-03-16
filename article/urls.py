@@ -13,5 +13,5 @@ urlpatterns = patterns('',
 	url(r'^add_comment/(?P<article_id>\d+)/$', 'article.views.add_comment'),
 	url(r'^search/$', 'article.views.search_titles'),	
 	url(r'^api/', include(article_resource.urls)),
-
+	url(r'^push/$', 'article.views.push'),
 )
