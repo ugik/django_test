@@ -6,6 +6,13 @@ from forms import MyRegistrationForm
 from django.contrib.auth.forms import UserCreationForm
 from django.template import RequestContext
 
+from django.contrib.formtools.wizard.views import SessionWizardView
+from django.core.mail import send_mail
+from django.conf import settings
+
+import logging
+logr = logging.getLogger(__name__)
+
 def index(request):
 	context = {}
 	return render_to_response('index.html', context, context_instance=RequestContext(request))	
@@ -54,8 +61,26 @@ def register_user(request):
 def register_success(request):
 	return render_to_response('register_success.html')
 
-	
 
+def process_form_data(form_list):
+	form_data = [form.cleaned_data for form in form_list]
 
+	logr.debug(form_data[0]['subject'])
+	logr.debug(form_data[1]['sender'])
+	logr.debug(form_data[2]['message'])
+
+	send_mail(form_data[0]['subject'],
+			  form_data[2]['message'], form_data[1]['sender'],
+			  ['gk@luminoso.com'], fail_silently=False)
+
+	return form_data
+
+class ContactWizard(SessionWizardView):
+	template_name = "contact_form.html"
+
+	def done(self, form_list, **kwargs):
+		form_data = process_form_data(form_list)
+
+		return render_to_response("done.html",{"form_data": form_data})
 
 

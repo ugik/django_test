@@ -2,13 +2,11 @@ from django.conf.urls import patterns, include, url
 from article.views import HelloTemplate
 from django.contrib import admin
 from tastypie.api import Api
-from api import LOResource
+
+from django_test.forms import ContactForm3, ContactForm2, ContactForm1
+from django_test.views import ContactWizard
 
 admin.autodiscover()
-
-# REST interface
-v1_api = Api(api_name='v1')
-v1_api.register(LOResource())
 
 urlpatterns = patterns('',
 
@@ -26,7 +24,7 @@ urlpatterns = patterns('',
 	url(r'^accounts/invalid/$', 'django_test.views.invalid_login'),
 	url(r'^accounts/register/$', 'django_test.views.register_user'),
 	url(r'^accounts/register_success/$', 'django_test.views.register_success'),
-    (r'^api/', include(v1_api.urls)),
+    url(r'^contact/$', ContactWizard.as_view([ContactForm1, ContactForm2])),
 
 # Hello examples
 	url(r'hello/$', 'article.views.hello'),
