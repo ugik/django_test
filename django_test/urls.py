@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     (r'^$', 'django_test.views.index'),
 
 	(r'^articles/', include('article.urls')),
+	(r'^accounts/', include('userprofile.urls')),
 # admin
     url(r'^admin/', include(admin.site.urls)),
 

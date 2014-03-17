@@ -8,7 +8,6 @@ from django.template import RequestContext
 
 from django.contrib.formtools.wizard.views import SessionWizardView
 from django.core.mail import send_mail
-from django.conf import settings
 
 import logging
 logr = logging.getLogger(__name__)

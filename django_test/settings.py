@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 TEMPLATE_DIRS = (
 	BASE_DIR+'/templates',
 	BASE_DIR+'/articles/templates',
+	BASE_DIR+'/userprofile/templates',
 )
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = (
 	'django_test',
 	'article',
 	'south',
+	'userprofile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -150,6 +152,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ugikma@gmail.com'
+
+AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 
 # references:
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
