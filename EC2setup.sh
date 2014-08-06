@@ -34,6 +34,7 @@ sudo echo "<Directory /home/ubuntu/"$project_app">" >> /etc/apache2/httpd.conf
 sudo echo "<Files wsgi.py>" >> /etc/apache2/httpd.conf
 sudo echo "    Order deny,allow" >> /etc/apache2/httpd.conf
 sudo echo "    Allow from all" >> /etc/apache2/httpd.conf
+sudo echo "    Require all granted" >> /etc/apache2/httpd.conf
 sudo echo "</Files>" >> /etc/apache2/httpd.conf
 sudo echo "</Directory>" >> /etc/apache2/httpd.conf
 sudo echo " " >> /etc/apache2/httpd.conf
@@ -43,6 +44,7 @@ sudo echo "<Directory /home/ubuntu/"$project"/static>" >> /etc/apache2/httpd.con
 sudo echo "<Files wsgi.py>" >> /etc/apache2/httpd.conf
 sudo echo "    Order deny,allow" >> /etc/apache2/httpd.conf
 sudo echo "    Allow from all" >> /etc/apache2/httpd.conf
+sudo echo "    Require all granted" >> /etc/apache2/httpd.conf
 sudo echo "</Files>" >> /etc/apache2/httpd.conf
 sudo echo "</Directory>" >> /etc/apache2/httpd.conf
 

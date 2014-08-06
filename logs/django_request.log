@@ -808,3 +808,8 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
     raise errorclass, errorvalue
 IntegrityError: (1048, "Column 'likes_cheese' cannot be null")
+2014-04-10 15:00:03,327 [WARNING] django.request: Not Found: /favicon.ico
+2014-04-10 17:11:18,138 [WARNING] django.request: Not Found: /index.html
+2014-04-10 17:11:18,214 [WARNING] django.request: Not Found: /favicon.ico
+2014-04-13 00:53:12,464 [WARNING] django.request: Not Found: /favicon.ico
+2014-08-06 00:02:05,477 [WARNING] django.request: Not Found: /favicon.ico
