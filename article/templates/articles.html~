@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block activepage %}
+{% block navbar_class-articles %} active {% endblock %}
+{% endblock %}
 
 {% block sidebar %}
 <ul>
@@ -10,15 +13,11 @@
 <h4>Search</h3>
 {% csrf_token %}
 <input type='test' id='search' name='search' />
-<ul id='search-results'>
-
-</ul>
-
+<ul id='search-results'></ul>
 
 {% endblock %}
 
 {% block content %}
-<br><br>
 <small>Language is: {{ language }}, Session language is: {{ session_language }}</small>
 {% if articles.count > 0 %}
 <table>
