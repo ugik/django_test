@@ -33,32 +33,30 @@ def auth_view(request):
 		return HttpResponseRedirect('/accounts/invalid')
 
 def loggedin(request):
-	return render_to_response('loggedin.html',
-						 	 {'full_name' : request.user.username},
-							  context_instance=RequestContext(request))
+	return render_to_response('loggedin.html', context_instance=RequestContext(request))
 
 def invalid_login(request):
-	return render_to_response('invalid_login.html')
+	return render_to_response('invalid_login.html', context_instance=RequestContext(request))
 
 def logout(request):
 	auth.logout(request)
 	return render_to_response('logout.html')
 
 def register_user(request):
-	if request.method == 'POST':
-		form = MyRegistrationForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/accounts/register_success')
+    if request.method == 'POST':
+        form = MyRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/accounts/register_success')
 
-	args = {}
-	args.update(csrf(request))
+    args = {}
+    args.update(csrf(request))
 	
-	args['form'] = MyRegistrationForm()
-	return render_to_response('register.html', args)
+    args['form'] = MyRegistrationForm()
+    return render_to_response('register.html', args)
 
 def register_success(request):
-	return render_to_response('register_success.html')
+    return render_to_response('register_success.html')
 
 
 def process_form_data(form_list):

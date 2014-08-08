@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from forms import UserProfileForm
+from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -22,7 +23,7 @@ def user_profile(request):
 
 	args['form'] = form
 
-	return render_to_response('profile.html', args)
+	return render_to_response('profile.html', args, context_instance=RequestContext(request))
 
 
 

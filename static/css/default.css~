@@ -1,13 +1,14 @@
 body {
     background-attachment: fixed;
     background-color: #FFFFFF;
-    background-image: url(/static/images/paper.jpg);
+    background-image: url(/static/images/spaper.jpg);
     background-position: center top;
     background-repeat: repeat;
-    color: #a00;
+    color: #000;
     margin: 20;
     padding: 20;
 	test-align: center;
+    margin-top:2cm;
 	}
 
 	#page {
@@ -19,8 +20,9 @@ body {
 
 	#sidebar {
 		float: left;
+        padding-left:10px;
 		width: 200px;
-		border: 1px solid #a00;
+		border: 0px solid #a00;
 	}
 
 	#content {

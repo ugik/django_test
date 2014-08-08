@@ -813,3 +813,329 @@ IntegrityError: (1048, "Column 'likes_cheese' cannot be null")
 2014-04-10 17:11:18,214 [WARNING] django.request: Not Found: /favicon.ico
 2014-04-13 00:53:12,464 [WARNING] django.request: Not Found: /favicon.ico
 2014-08-06 00:02:05,477 [WARNING] django.request: Not Found: /favicon.ico
+2014-08-07 00:36:34,532 [WARNING] django.request: Not Found: /hello_bootstrap/
+2014-08-07 00:37:20,203 [WARNING] django.request: Not Found: /hello_bootstrap
+2014-08-07 00:38:43,959 [WARNING] django.request: Not Found: /hello_template/css/bootstrap.min.css
+2014-08-07 00:38:43,989 [WARNING] django.request: Not Found: /hello_template/js/bootstrap.min.js
+2014-08-07 00:38:58,146 [WARNING] django.request: Not Found: /hello_bootstrap/css/bootstrap.min.css
+2014-08-07 00:38:58,555 [WARNING] django.request: Not Found: /hello_bootstrap/js/bootstrap.min.js
+2014-08-07 00:39:17,803 [WARNING] django.request: Not Found: /hello_template/css/bootstrap.min.css
+2014-08-07 00:39:17,813 [WARNING] django.request: Not Found: /hello_template/js/bootstrap.min.js
+2014-08-07 00:39:26,802 [ERROR] django.request: Internal Server Error: /hello_template/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/article/views.py", line 138, in hello_template
+    t = get_template('hello_template.html')
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 131, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: hello_template.html
+2014-08-07 00:40:00,503 [WARNING] django.request: Not Found: /hello_bootstrap/js/bootstrap.min.js
+2014-08-07 00:40:00,826 [WARNING] django.request: Not Found: /hello_bootstrap/css/bootstrap.min.css
+2014-08-07 00:41:26,758 [WARNING] django.request: Not Found: /dist/css/bootstrap.min.css
+2014-08-07 00:41:26,758 [WARNING] django.request: Not Found: /hello_bootstrap/starter-template.css
+2014-08-07 00:41:26,766 [WARNING] django.request: Not Found: /assets/js/ie10-viewport-bug-workaround.js
+2014-08-07 00:41:26,774 [WARNING] django.request: Not Found: /dist/js/bootstrap.min.js
+2014-08-07 00:51:32,436 [WARNING] django.request: Not Found: /hello_bootstrap/starter-template.css
+2014-08-07 00:51:32,437 [WARNING] django.request: Not Found: /assets/js/ie10-viewport-bug-workaround.js
+2014-08-07 00:51:32,476 [WARNING] django.request: Not Found: /dist/js/bootstrap.min.js
+2014-08-07 00:55:48,505 [WARNING] django.request: Not Found: /dist/css/bootstrap.min.css
+2014-08-07 00:55:48,514 [WARNING] django.request: Not Found: /assets/js/ie10-viewport-bug-workaround.js
+2014-08-07 00:55:48,530 [WARNING] django.request: Not Found: /hello_bootstrap/starter-template.css
+2014-08-07 15:29:14,299 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 17, in index
+    return render_to_response('index.html', context, context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts/__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 162, in render_to_string
+    t = get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 127, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 149, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 276, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 331, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'user.is_authenticated', expected 'endblock'
+2014-08-08 01:11:07,479 [ERROR] django.request: Internal Server Error: /hello_template_simple/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 37
+    args['logged_in'] = request.user.is_authenticated()
+                                                      ^
+IndentationError: unindent does not match any outer indentation level
+2014-08-08 01:12:10,171 [ERROR] django.request: Internal Server Error: /hello_template_simple/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 39
+    return render_to_response('articles.html', args)
+   ^
+IndentationError: unexpected indent
+2014-08-08 01:12:11,724 [ERROR] django.request: Internal Server Error: /hello_template_simple/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 39
+    return render_to_response('articles.html', args)
+   ^
+IndentationError: unexpected indent
+2014-08-08 01:12:28,777 [ERROR] django.request: Internal Server Error: /hello_template_simple/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 45
+    return render_to_response('article.html',
+                                            ^
+IndentationError: unindent does not match any outer indentation level
+2014-08-08 01:50:38,246 [WARNING] django.request: Not Found: /accounts/invalid_login/
+2014-08-08 01:51:02,652 [WARNING] django.request: Not Found: /invalid_login/
+2014-08-08 13:27:15,650 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 62
+    return HttpResponseRedirect('/articles/all')
+   ^
+IndentationError: unexpected indent
+2014-08-08 13:27:44,781 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 62
+    return HttpResponseRedirect('/articles/all')
+   ^
+IndentationError: unexpected indent
+2014-08-08 13:28:11,486 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 2, in <module>
+    from article.views import HelloTemplate
+  File "/home/gk/django_test/article/views.py", line 152
+    return render_to_response('hello.html', {'name': 'GK'}, context_instance=RequestContext(request))
+   ^
+IndentationError: unexpected indent
+2014-08-08 13:28:24,261 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 7, in <module>
+    from django_test.views import ContactWizard
+  File "/home/gk/django_test/django_test/views.py", line 57
+    return render_to_response('register.html', args)
+                                                   ^
+IndentationError: unindent does not match any outer indentation level
+2014-08-08 13:28:41,794 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 7, in <module>
+    from django_test.views import ContactWizard
+  File "/home/gk/django_test/django_test/views.py", line 56
+    args['form'] = MyRegistrationForm()
+                                      ^
+IndentationError: unindent does not match any outer indentation level
+2014-08-08 13:29:01,232 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/gk/django_test/django_test/urls.py", line 7, in <module>
+    from django_test.views import ContactWizard
+  File "/home/gk/django_test/django_test/views.py", line 51
+    return HttpResponseRedirect('/accounts/register_success')
+                                                            ^
+IndentationError: unindent does not match any outer indentation level
+2014-08-08 13:29:35,039 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:30:31,834 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:30:32,872 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:30:56,761 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:31:40,876 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:32:22,582 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:32:30,372 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:32:34,790 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:33:06,087 [ERROR] django.request: Internal Server Error: /accounts/loggedin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 36, in loggedin
+    return render_to_response('loggedin.html', context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:34:03,206 [ERROR] django.request: Internal Server Error: /accounts/invalid/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gk/django_test/django_test/views.py", line 39, in invalid_login
+    return render_to_response('invalid_login.html', args, context_instance=RequestContext(request))
+NameError: global name 'args' is not defined
+2014-08-08 13:37:28,368 [WARNING] django.request: Not Found: /accounts/user_profile/
+2014-08-08 13:47:00,704 [WARNING] django.request: Not Found: /user_profile/user_profile/
+2014-08-08 13:47:39,678 [WARNING] django.request: Not Found: /user_profile/user_profile/
+2014-08-08 13:47:42,251 [WARNING] django.request: Not Found: /user_profile/user_profile/
+2014-08-08 13:47:45,780 [WARNING] django.request: Not Found: /profile/
+2014-08-08 13:48:06,553 [WARNING] django.request: Not Found: /user_profile/profile/

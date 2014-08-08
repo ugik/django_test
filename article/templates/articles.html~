@@ -10,7 +10,6 @@
 <h4>Search</h3>
 {% csrf_token %}
 <input type='test' id='search' name='search' />
-
 <ul id='search-results'>
 
 </ul>
@@ -19,7 +18,8 @@
 {% endblock %}
 
 {% block content %}
-<small>Language is: {{ language }} Session language is: {{ session_language }}</small>
+<br><br>
+<small>Language is: {{ language }}, Session language is: {{ session_language }}</small>
 {% if articles.count > 0 %}
 <table>
 
@@ -38,6 +38,8 @@
 </div>
 {% endfor %}
 </table>
+{{ logged_in }}
+
 {% else %}
 <p>None to show</p>
 {% endif %}

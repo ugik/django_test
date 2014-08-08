@@ -10,7 +10,6 @@
 <h4>Search</h3>
 {% csrf_token %}
 <input type='test' id='search' name='search' />
-
 <ul id='search-results'>
 
 </ul>
@@ -38,6 +37,8 @@
 </div>
 {% endfor %}
 </table>
+{{ logged_in }}
+
 {% else %}
 <p>None to show</p>
 {% endif %}

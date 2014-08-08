@@ -1,7 +1,8 @@
 <html>
 <body>
 
-Hi {{ name }}, this template seems to work.
+Hi {{ name }}, this template seems to work...
 
+<pre> {% filter force_escape %} {% debug %} {% endfilter %} </pre>
 </body>
 </html>
