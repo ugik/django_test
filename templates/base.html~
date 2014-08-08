@@ -62,8 +62,6 @@
         </div><!--/.nav-collapse -->      </div>
     </div>
 
-    {% block activepage %}{% endblock %}
-
 	<div style="padding-top: 60px;" class="container">
 	{% block content %}
 		
