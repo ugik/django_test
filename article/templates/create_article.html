@@ -10,12 +10,6 @@
 	</script>
 {% endblock %}
 
-{% block sidebar %}
-<ul>
-	<li><a href="/articles/all">Cancel</a></li>
-</ul>
-{% endblock %}
-
 {% block content %}
 
 <form action="/articles/create/" method="post" enctype="multipart/form-data">{% csrf_token %}
